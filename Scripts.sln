@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.89
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRover", "AutoRover\AutoRover.csproj", "{C84F8B93-4478-4649-B4E8-1AF59477A0C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotored Car", "Rotored Car\Rotored Car.csproj", "{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C84F8B93-4478-4649-B4E8-1AF59477A0C2}.Debug|x64.ActiveCfg = Debug|x64
+		{C84F8B93-4478-4649-B4E8-1AF59477A0C2}.Debug|x64.Build.0 = Debug|x64
+		{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}.Debug|x64.ActiveCfg = Debug|x64
+		{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C54D46D3-10CF-4E89-9784-D90CAE875E4D}
+	EndGlobalSection
+EndGlobal
