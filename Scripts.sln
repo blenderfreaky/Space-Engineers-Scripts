@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRover", "AutoRover\Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotored Car", "Rotored Car\Rotored Car.csproj", "{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stockpile", "Stockpile\Stockpile.csproj", "{F3B5666F-16F8-40EE-8302-B2E823E65CEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -16,6 +18,8 @@ Global
 		{C84F8B93-4478-4649-B4E8-1AF59477A0C2}.Debug|x64.Build.0 = Debug|x64
 		{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}.Debug|x64.ActiveCfg = Debug|x64
 		{40BFEFA8-FE10-4679-8FAE-D3AFFEA4B27D}.Debug|x64.Build.0 = Debug|x64
+		{F3B5666F-16F8-40EE-8302-B2E823E65CEE}.Debug|x64.ActiveCfg = Debug|x64
+		{F3B5666F-16F8-40EE-8302-B2E823E65CEE}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -53,6 +53,12 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
+            if (argument == "reset")
+            {
+                _vehicle.Drive(0, 0);
+                Runtime.UpdateFrequency = UpdateFrequency.None;
+                return;
+            }
             _vehicle.DriveTo(_target.Value, 10);
         }
     }
