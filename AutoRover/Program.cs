@@ -21,8 +21,8 @@ namespace IngameScript
 {
     public partial class Program : MyGridProgram
     {
-        private MyIni _ini = new MyIni();
-        private Vehicle _vehicle;
+        private readonly MyIni _ini = new MyIni();
+        private readonly Vehicle _vehicle;
         private const string _section = "AutoRover";
         private Vector3? _target;
 
@@ -51,7 +51,7 @@ namespace IngameScript
         {
         }
 
-        public void Main(string argument, UpdateType updateSource)
+        public void Main(string argument)
         {
             if (argument == "reset")
             {

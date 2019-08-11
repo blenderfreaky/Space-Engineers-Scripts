@@ -86,7 +86,7 @@ namespace IngameScript
 
         private float _timer = 0;
 
-        public void Main(string arg, UpdateType updateSource)
+        public void Main(string arg)
         {
             try
             {
@@ -120,12 +120,12 @@ namespace IngameScript
                     float rotation = -move.X * _steer;
                     const float factor = 15f;
 
-                    float div = (rotation + factor * (i / (_motors.GetLength(0) - 1) - 0.5f));
+                    float div = (rotation + (factor * ((i / (_motors.GetLength(0) - 1)) - 0.5f)));
                     float steeringAngle = rotation != 0 ? (div != 0 ? (left / div) : 0) : 0;
 
                     foreach (var steer in _steering[i])
                     {
-                        steer.TargetVelocityRad = steeringAngle - steer.Angle % ((float)Math.PI * 2) * 10f;
+                        steer.TargetVelocityRad = steeringAngle - (steer.Angle % ((float)Math.PI * 2) * 10f);
                     }
                 }
             }

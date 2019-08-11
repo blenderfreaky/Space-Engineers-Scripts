@@ -19,7 +19,7 @@ using VRageMath;
 
 namespace IngameScript
 {
-    partial class Program
+    public partial class Program
     {
         private struct StepReturn
         {
@@ -59,7 +59,7 @@ namespace IngameScript
                     CurrentState = StepState.IndexedCargoItems,
                 };
 
-                _productionQueue.Clear();
+                _productionQueueCount.Clear();
                 for (int i = 0; i < _assemblers.Length; i++)
                 {
                     queue.Clear();
@@ -79,10 +79,10 @@ namespace IngameScript
                 _unqueuedStockpileCount.Clear();
                 foreach (var item in _stockpileCount)
                 {
-                    _unqueuedStockpileCount.Add(item.Key, item.Value);
+                    _unqueuedStockpileCount.Add(item.Key, item.Value * _factor);
                 }
 
-                foreach (var item in _cargoItemCount.Concat(_productionQueue))
+                foreach (var item in _cargoItemCount.Concat(_productionQueueCount))
                 {
                     if (_unqueuedStockpileCount.ContainsKey(item.Key))
                     {
@@ -95,13 +95,18 @@ namespace IngameScript
                     CurrentState = StepState.IndexedUnstockpiledItems,
                 };
 
+                var toProduce = _unqueuedStockpileCount
+                    .Where(x => x.Value > 0)
+                    .Select(x => new { Type = x.Key, Amount = MyFixedPoint.Ceiling(x.Value * (1f / _assemblers.Length)) })
+                    .ToArray();
+
                 for (int i = 0; i < _assemblers.Length; i++)
                 {
                     var assembler = _assemblers[i];
 
-                    foreach (var itemToQueue in _unqueuedStockpileCount)
+                    for (int j = 0; j < toProduce.Length; j++)
                     {
-                        assembler.AddQueueItem(itemToQueue.Key, itemToQueue.Value);
+                        assembler.AddQueueItem(toProduce[j].Type, toProduce[j].Amount);
                     }
                 }
 
